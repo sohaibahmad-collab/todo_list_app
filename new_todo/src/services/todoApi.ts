@@ -22,6 +22,7 @@ export async function addTodoApi(todo: Omit<Todo, "_id">): Promise<Todo> {
 
 export async function updateTodoApi(todo: Todo): Promise<Todo> {
   const { _id, ...rest } = todo;
+  
   const res = await fetch(`${API_BASE}/${_id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -32,8 +33,8 @@ export async function updateTodoApi(todo: Todo): Promise<Todo> {
 }
 
 
-export async function deleteTodoApi(id: string): Promise<string> {
-  const res = await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
+export async function deleteTodoApi(_id: string): Promise<string> {
+  const res = await fetch(`${API_BASE}/${_id}`, { method: "DELETE" });
   if (!res.ok) throw new Error("Failed to delete todo");
-  return id;
+  return _id;
 }

@@ -39,6 +39,7 @@ const todoSlice = createSlice({
     deleteTodoSuccess: (state, action: PayloadAction<string>) => {
       state.loading = false;
       state.items = state.items.filter((t) => t._id !== action.payload);
+
     },
     failure: (state, action: PayloadAction<string>) => {
       state.loading = false;

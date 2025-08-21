@@ -1,28 +1,25 @@
 import { Pencil, Trash2, Check } from "lucide-react";
 import Button from "./Button";
+import { useEditTodo } from "../hooks/useEditTodo";
+import { useDeleteTodo } from "../hooks/useDeleteTodo";
+import { useToggleTodo } from "../hooks/useToggleTodo";
+import { useState } from "react";
+
+//  const { handleSaveEdit } = useEditTodo();
+//  const {handleDelete} = useDeleteTodo();
+// const { handleToggle } = useToggleTodo();
 
 type Props = {
   todo: { _id: string; title: string; completed: boolean };
-  editId: string | null;
-  editText: string;
-  setEditId: (id: string | null) => void;
-  setEditText: (text: string) => void;
-  handleToggle: (id: string, title: string, completed: boolean) => void;
-  handleDelete: (id: string) => void;
-  handleSaveEdit: (id: string, completed: boolean) => void;
 };
-//types common
 
-export default function TaskItem({
-  todo,
-  editId,
-  editText,
-  setEditId,
-  setEditText,
-  handleToggle,
-  handleDelete,
-  handleSaveEdit,
-}: Props) {
+export default function TaskItem({ todo }: Props) {
+  const [editId, setEditId] = useState<string>("");
+  const [editText, setEditText] = useState<string>("");
+  const { handleSaveEdit } = useEditTodo();
+  const { handleDelete } = useDeleteTodo();
+  const { handleToggle } = useToggleTodo();
+
   return (
     <div className="flex items-center justify-between border border-gray-700 rounded-lg p-3">
       {editId === todo._id ? (
@@ -31,13 +28,19 @@ export default function TaskItem({
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") handleSaveEdit(todo._id, todo.completed);
+              if (e.key === "Enter") {
+                handleSaveEdit(todo._id, editText, todo.completed);
+                setEditId("");
+              }
             }}
             className="flex-1 bg-gray-900 border border-gray-700 px-2 py-1 rounded-lg outline-none"
           />
           <Button
             variant="icon"
-            onClick={() => handleSaveEdit(todo._id, todo.completed)}
+            onClick={() => {
+              handleSaveEdit(todo._id, editText, todo.completed);
+              setEditId("");
+            }}
           >
             <Check size={18} />
           </Button>
