@@ -1,26 +1,12 @@
-import Header from "./components/Header";
-import StatusCard from "./components/StatusCard";
-import TaskInput from "./components/TaskInput";
-import TaskList from "./components/TaskList";
-
+import Header from "@components/Header";
+import StatusCard from "@components/StatusCard";
+import TaskInput from "@components/TaskInput";
+import TaskList from "@components/TaskList";
+import { useFetchTodos } from "@hooks/useFetchTodos";
 // import { useTodoActions } from "./hooks/useTodoAction";
 
 function App() {
-  // const {
-  //   items,
-  //   newTask,
-  //   setNewTask,
-  //   editId,
-  //   setEditId,
-  //   editText,
-  //   setEditText,
-  //   handleAdd,
-  //   handleToggle,
-  //   handleDelete,
-  //   handleSaveEdit,
-  //   completedCount,
-  // } = useTodoActions();
-
+    useFetchTodos(); 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-10">
       <Header />

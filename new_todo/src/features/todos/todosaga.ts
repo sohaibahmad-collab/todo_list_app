@@ -16,8 +16,8 @@ import {
   addTodoApi,
   updateTodoApi,
   deleteTodoApi,
-} from "../../services/todoApi";
-import {type Todo } from "../../types/todo";
+} from "@services/todoApi";
+import type { Todo } from "@models/todo";
 
 function getErrorMessage(err: unknown): string {
   if (err instanceof Error) return err.message;

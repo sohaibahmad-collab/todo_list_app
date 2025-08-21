@@ -1,9 +1,10 @@
 import { API_BASE } from "../api";
-import type { Todo } from "@models/todo";
+import type { Todo } from "@models/todo"; 
 
 
 export async function fetchTodosApi(): Promise<Todo[]> {
   const res = await fetch(API_BASE);
+  // console.log("API Response:", res);
   if (!res.ok) throw new Error("Failed to fetch todos");
   return res.json();
 }

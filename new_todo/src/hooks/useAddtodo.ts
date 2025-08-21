@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { type AppDispatch } from "@app/store";
 import { toast } from "react-toastify";
-import { addTodo } from "@features/todos/todoslice";
+import { addTodo } from "../features/todos/todoslice";
 
 export const useAddTodo = () => {
   const dispatch = useDispatch<AppDispatch>();

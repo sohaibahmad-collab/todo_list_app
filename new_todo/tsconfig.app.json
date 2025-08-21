@@ -49,6 +49,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
       "@hooks/*": ["hooks/*"],
       "@store/*": ["store/*"],
       "@features/*": ["features/*"],
