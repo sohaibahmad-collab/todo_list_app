@@ -1,5 +1,5 @@
 import { API_BASE } from "../api";
-import { type Todo } from "../types/todo";
+import type { Todo } from "@models/todo";
 
 
 export async function fetchTodosApi(): Promise<Todo[]> {

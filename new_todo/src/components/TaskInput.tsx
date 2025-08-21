@@ -1,7 +1,7 @@
 import { Plus } from "lucide-react";
 import Button from "./Button";
 
-import { useAddTodo } from "../hooks/useAddtodo";
+import { useAddTodo } from "@hooks/useAddtodo";
 
 
 export default function TaskInput() {

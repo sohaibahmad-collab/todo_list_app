@@ -1,8 +1,8 @@
 import { Pencil, Trash2, Check } from "lucide-react";
 import Button from "./Button";
-import { useEditTodo } from "../hooks/useEditTodo";
-import { useDeleteTodo } from "../hooks/useDeleteTodo";
-import { useToggleTodo } from "../hooks/useToggleTodo";
+import { useEditTodo } from "@hooks/useEditTodo";
+import { useDeleteTodo } from "@hooks/useDeleteTodo";
+import { useToggleTodo } from "@hooks/useToggleTodo";
 import { useState } from "react";
 
 //  const { handleSaveEdit } = useEditTodo();

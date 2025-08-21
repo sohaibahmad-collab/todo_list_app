@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import {type  AppDispatch } from "../app/store";
-import { updateTodo } from "../features/todos/todoslice";
+import {type  AppDispatch } from "@app/store";
+import { updateTodo } from "@features/todos/todoslice";
 
 export const useToggleTodo = () => {
   const dispatch = useDispatch<AppDispatch>();

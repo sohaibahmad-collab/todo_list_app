@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {type  AppDispatch } from "../app/store";
-import { updateTodo } from "../features/todos/todoslice";
+import {type  AppDispatch } from "@app/store";
+import { updateTodo } from "@features/todos/todoslice";
 
 export const useEditTodo = () => {
   const dispatch = useDispatch<AppDispatch>();

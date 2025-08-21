@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { type AppDispatch } from "../app/store";
-import { deleteTodo } from "../features/todos/todoslice";
+import { type AppDispatch } from "@app/store";
+import { deleteTodo } from "@features/todos/todoslice";
 
 export const useDeleteTodo = () => {
   const dispatch = useDispatch<AppDispatch>();

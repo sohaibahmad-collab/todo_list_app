@@ -1,7 +1,8 @@
+
 import { useSelector } from "react-redux";
 import { type RootState } from "@app/store";
 
-export const useTodos = () => {
+export const useLoading = () => {
   const { items } = useSelector((state: RootState) => state.todos);
   return items;
 };

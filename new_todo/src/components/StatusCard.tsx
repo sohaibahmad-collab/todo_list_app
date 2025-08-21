@@ -1,5 +1,5 @@
-import { useTodos } from "../hooks/useTodos";
-import { useCompletedCount } from "../hooks/useCompleteCount";
+import { useTodos } from "@hooks/useTodos";
+import { useCompletedCount } from "@hooks/useCompleteCount";
 
 export default function StatusCard() {
   const items = useTodos();
